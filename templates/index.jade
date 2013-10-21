@@ -42,7 +42,7 @@ html
     section
       .row.overview
         .large-12.columns
-          h1 #{total} Requests
+          h1 #{total} Pedidos
           ul.large-block-grid-3.small-block-grid-1
             li.successful
               h2=successCount
@@ -52,10 +52,10 @@ html
               h3.subheader Rechazados
             li.not-held
               h2=notHeldCount
-              h3.subheader Not Held
+              h3.subheader No Contestados
       .row
         .large-12.columns
-          h1 Most Successful Requests
+          h1 Los pedidos mas exitosos
           ul.large-block-grid-3.small-block-grid-1.successful 
             - each item in successful
               li
@@ -65,7 +65,7 @@ html
                   h3.subheader=item.name
       .row
         .large-12.columns
-          h1 Most Refused Requests
+          h1 Los pedidos mas rechazados
           ul.large-block-grid-3.small-block-grid-1.refused 
             - each item in refused
               li
@@ -75,7 +75,7 @@ html
                   h3.subheader=item.name
       .row
         .large-12.columns
-          h1 Most Not Held Requests
+          h1 Los pedidos mas no contestados
           ul.large-block-grid-3.small-block-grid-1.not-held 
             - each item in notHeld
               li
@@ -85,7 +85,7 @@ html
                   h3.subheader=item.name
       .row
         .large-12.columns
-          h1 Most Requests
+          h1 Mas pedidos
           ul.large-block-grid-3.small-block-grid-1 
             - each item in requests
               li
