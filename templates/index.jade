@@ -1,6 +1,7 @@
 doctype 5
 html
   head
+    meta(charset="utf-8")  
     link(rel="stylesheet" type="text/css" class="ui" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css")
     style.
       h1, h2, h3, h4 {
@@ -37,7 +38,7 @@ html
       .row
         h1 Pedidos de Información en Uruguay
         h2 
-          | en los últimos 12 meses a traves de 
+          | en los últimos 12 meses a tráves de 
           a(href="#{site}") #{name}
     section
       .row.overview
@@ -65,7 +66,7 @@ html
                   h3.subheader=item.name
       .row
         .large-12.columns
-          h1 Pedidos Más Rechazados
+          h1 Mayoría de Pedidos Rechazados
           ul.large-block-grid-3.small-block-grid-1.refused 
             - each item in refused
               li
@@ -75,7 +76,7 @@ html
                   h3.subheader=item.name
       .row
         .large-12.columns
-          h1 Most Not Held Requests
+          h1 Mayoría de Pedidos No Contestados
           ul.large-block-grid-3.small-block-grid-1.not-held 
             - each item in notHeld
               li
