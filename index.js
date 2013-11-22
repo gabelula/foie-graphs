@@ -10,9 +10,12 @@ var Search = require('./lib/search'),
     store,
     count = 0;
 
-search = new Search(process.env.ALAVETELI);
+
+console.log("Inicio en %s", process.env.ALAVETELI);
+
+search  = new Search(process.env.ALAVETELI);
 scraper = new Scraper(process.env.ALAVETELI);
-store = new Store(process.env.ALAVETELI);
+store   = new Store(process.env.ALAVETELI);
 
 search.on('request', function(uri, original) {
     console.log("URI %s linked to from %s", uri, original);
@@ -20,13 +23,15 @@ search.on('request', function(uri, original) {
 });
 
 scraper.on('data', function(data) {
+    console.log("scraper on data, line 25");
     if (moment(data.created_at) > limit) {
-        //console.log("Saving request #%s from %s with the date %s", ++count, data.url_title, data.created_at);
+        console.log("Saving request #%s from %s with the date %s", ++count, data.url_title, data.created_at);
         store.save(data);
     }
 });
 
 scraper.on('finish', function() {
+    console.log("scraper on finish, line 33");    
     var now = moment(),
         restart = moment().add(7, 'days');
 
@@ -36,9 +41,12 @@ scraper.on('finish', function() {
 });
 
 function crawl() {
+    console.log("crawling, line 43");
     store.clear();
     limit = moment().subtract(12, 'months');
     search.start(12);
 }
 
 crawl();
+
+console.log("fin")
