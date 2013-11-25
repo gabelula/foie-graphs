@@ -1,7 +1,7 @@
 doctype 5
 html
   head
-    meta(charset="utf-8")  
+    meta(charset="utf-8")
     link(rel="stylesheet" type="text/css" class="ui" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css")
     style.
       h1, h2, h3, h4 {
@@ -37,8 +37,8 @@ html
     section.masthead
       .row
         h1 Pedidos de Información en Uruguay
-        h2 
-          | en los últimos 12 meses a tráves de 
+        h2
+          | en los últimos 16 meses a tráves de
           a(href="#{site}") #{name}
     section
       .row.overview
@@ -57,7 +57,7 @@ html
       .row
         .large-12.columns
           h1 Pedidos Más Exitosos
-          ul.large-block-grid-3.small-block-grid-1.successful 
+          ul.large-block-grid-3.small-block-grid-1.successful
             - each item in successful
               li
                 a(href="#{site}/body/#{item.url}/successful")
@@ -67,7 +67,7 @@ html
       .row
         .large-12.columns
           h1 Mayoría de Pedidos Rechazados
-          ul.large-block-grid-3.small-block-grid-1.refused 
+          ul.large-block-grid-3.small-block-grid-1.refused
             - each item in refused
               li
                 a(href="#{site}/body/#{item.url}/unsuccessful")
@@ -77,7 +77,7 @@ html
       .row
         .large-12.columns
           h1 Mayoría de Pedidos No Contestados
-          ul.large-block-grid-3.small-block-grid-1.not-held 
+          ul.large-block-grid-3.small-block-grid-1.not-held
             - each item in notHeld
               li
                 a(href="#{site}/body/#{item.url}/unsuccessful?query=not held")
@@ -87,7 +87,7 @@ html
       .row
         .large-12.columns
           h1 Más Pedidos
-          ul.large-block-grid-3.small-block-grid-1 
+          ul.large-block-grid-3.small-block-grid-1
             - each item in requests
               li
                 a(href="#{site}/body/#{item.url}")

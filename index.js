@@ -31,7 +31,7 @@ scraper.on('data', function(data) {
 });
 
 scraper.on('finish', function() {
-    console.log("scraper on finish, line 33");    
+    console.log("scraper on finish, line 33");
     var now = moment(),
         restart = moment().add(7, 'days');
 
@@ -43,8 +43,8 @@ scraper.on('finish', function() {
 function crawl() {
     console.log("crawling, line 43");
     store.clear();
-    limit = moment().subtract(12, 'months');
-    search.start(12);
+    limit = moment().subtract(16, 'months');
+    search.start(16);
 }
 
 crawl();
